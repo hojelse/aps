@@ -1,17 +1,21 @@
 from collections import defaultdict
+
+name_years = defaultdict(lambda: [])
+
 n = int(input())
 
-d = defaultdict(list)
+for _ in range(n):
+  dest,y = input().split()
+  year = int(y)
+  name_years[dest].append(year)
 
-for i in range(n):
-  s, y = input().split()
-  d[s].append(int(y))
-
-for k,v in d.items():
-  v.sort()
+for l in name_years:
+  name_years[l].sort()
 
 q = int(input())
 
-for i in range(q):
-  s,k = input().split()
-  print(d[s][int(k)-1])
+for _ in range(q):
+  dest,y = input().split()
+  year = int(y)
+  print(name_years[dest][year-1])
+

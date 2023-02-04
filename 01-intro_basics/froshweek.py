@@ -19,7 +19,7 @@ def merge_sort(l) -> list:
   lo_idx, hi_idx = 0, 0
 
   while True:
-    
+
     lo_empty, hi_empty = lo_idx >= len(lo), hi_idx >= len(hi)
 
     if lo_empty and hi_empty:
